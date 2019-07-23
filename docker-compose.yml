@@ -1,0 +1,22 @@
+version: '3.6'
+
+services: 
+  mosquitto:
+    tty: true
+    stdin_open: true
+    image: eclipse-mosquitto:1.6.3
+    volumes: 
+      - ./mosquitto/data:/mosquitto/data
+      - ./mosquitto/logs:/mosquitto/log
+    ports:
+      - 1883:1883
+
+  nodejs:
+    tty: true
+    stdin_open: true
+    build: ./docker/nodejs
+#    command: bash /docker-entrypoint.sh
+    volumes:
+      - .:/home/node/app
+    depends_on:
+      - mosquitto

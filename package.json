@@ -1,0 +1,14 @@
+{
+  "name": "mosquitto-nodejs",
+  "version": "1.0.0",
+  "description": "Manager mosquitto NodeJs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "ThangTran",
+  "license": "ISC",
+  "dependencies": {
+    "mqtt": "^3.0.0"
+  }
+}
